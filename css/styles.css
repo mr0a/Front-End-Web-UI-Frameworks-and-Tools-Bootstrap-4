@@ -42,3 +42,7 @@ body{
     border-top: none;
     padding: 10px;
 }
+
+div.card-header a{
+    color: black;
+}
