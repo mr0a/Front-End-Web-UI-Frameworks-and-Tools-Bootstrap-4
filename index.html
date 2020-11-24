@@ -27,7 +27,7 @@
                     <li class="nav-item"><a href="contactus.html" class="nav-link"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginModalLink">
                         <span class="fa fa-sign-in"></span>Login
                     </a>
                 </span>
@@ -40,7 +40,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login</h4>
-                    <button class="close" data-dismiss="modal">
+                    <button class="close" id="loginModalClose">
                         &times;
                     </button>
                 </div>
@@ -64,7 +64,7 @@
                         </div>
                         <div class="form-row">
                             <button type="submit" class="btn btn-primary btn-sm ml-auto">Sign in</button>
-                            <button type="submit" class="btn btn-secondary btn-sm ml-1" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-secondary btn-sm ml-1" id="loginModalCloseBtn">Cancel</button>
                         </div>
                     </form>
                 </div>
@@ -77,7 +77,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Reserve a Table</h4>
-                    <button class="close" data-dismiss="modal">&times;</button>
+                    <button class="close" id="reserveModalClose">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form action="" method="get">
@@ -162,7 +162,7 @@
                                     <img src="img/logo.png" alt="logo" class="img-fluid">
                                 </div>
                                 <div class="col-6 align-self-center">
-                                    <a data-toggle="modal" class="btn btn-block bg-warning" data-toggl="tooltip" data-html="true" title="Or Call Us at +23456789" data-placement="bottom" data-target="#reserve-modal">Reserve Table</a>
+                                    <a id="reserveModalbtn" class="btn btn-block bg-warning">Reserve Table</a>
                                 </div>
                             </div>
                         </div>
@@ -180,7 +180,7 @@
         </ol>
         <div class="row row-content">
             <div class="col">
-                <div class="carousel slide" id="mycarousel" data-ride="carousel" data-interval=3000>
+                <div class="carousel slide" id="mycarousel" data-ride="carousel">
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
                             <img src="/img/uthappizza.png" alt="uthappizza" class="d-block img-fluid">
@@ -374,7 +374,7 @@
            </div>
            <div class="row justify-content-center">             
                 <div class="col-auto">
-                    <p>© Copyright 2018 Ristorante Con Fusion</p>
+                    <p>© Copyright 2020 Ristorante Con Fusion</p>
                 </div>
            </div>
         </div>
@@ -399,6 +399,27 @@
                     $('#carouselButton').children('span').removeClass('fa-play');
                     $('#carouselButton').children('span').addClass('fa-pause');
                 }
+            });
+
+            // Login Modal
+            $('#loginModalLink').click(function(){
+                $('#loginModal').modal();
+            });
+
+            $('#loginModalClose').click(function(){
+                $('#loginModal').modal('hide');
+            });
+
+            $('#loginModalCloseBtn').click(function(){
+                $('#loginModal').modal('hide');
+            });
+
+            // Reserve Modal
+            $('#reserveModalClose').click(function(){
+                $('#reserve-modal').modal('hide');
+            });
+            $('#reserveModalbtn').click(function(){
+                $('#reserve-modal').modal();
             });
         });
     </script>
