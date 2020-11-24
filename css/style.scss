@@ -1,27 +1,27 @@
-@lt-gray: #ddd;
-@background-dark: #512DA8;
-@background-light: #9575CD;
-@backfround-pale:  #D1C4E9;
+$lt-gray: #ddd;
+$background-dark: #512DA8;
+$background-light: #9575CD;
+$backfround-pale:  #D1C4E9;
 
-@carousel-item-height: 300px;
+$carousel-item-height: 300px;
 
-.zero-margin(@pad-up-dn: 0px, @pad-lt-rt: 0px){
+@mixin zero-margin($pad-up-dn: 0px, $pad-lt-rt: 0px){
     margin: 0px auto;
-    padding: @pad-up-dn @pad-lt-rt;
+    padding: $pad-up-dn $pad-lt-rt;
 }
 
 .row-header{
-    .zero-margin(20px, 0px);
+    @include zero-margin(20px, 0px);
 }
 
 .row-content{
-    .zero-margin(50px);
+    @include zero-margin(50px);
     border-bottom: 1px ridge;
     min-height: 400px;
 }
 
 .navbar-dark{
-    background-color: @background-dark;
+    background-color: $background-dark;
 
     #loginModalLink {
         cursor: pointer;
@@ -29,28 +29,28 @@
 }
 
 .jumbotron{
-    .zero-margin(50px, 30px);
-    background-color: @background-light;
+    @include zero-margin(50px, 30px);
+    background-color: $background-light;
     color: floralwhite;
 }
 
 .modal-header {
-    background-color: @background-dark;
+    background-color: $background-dark;
     color: white;
     .close {
-        color: @lt-gray;
+        color: $lt-gray;
     }
 }
 
 .modal-body {
-    background-color: @backfround-pale;
+    background-color: $backfround-pale;
     .section{
         visibility: hidden;
     }
 }
 
 .carousel {
-    background-color: @background-dark;
+    background-color: $background-dark;
     .carousel-item {
         height: 300px;
         img {
@@ -70,5 +70,5 @@
 }
 
 .footer{
-    background-color: @backfround-pale;
+    background-color: $backfround-pale;
 }
